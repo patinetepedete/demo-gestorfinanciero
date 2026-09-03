@@ -4,10 +4,7 @@ import type { Database } from "./types";
 
 const PUBLIC_PATHS = ["/login", "/registro", "/privacidad", "/terminos"];
 
-// TODO: quitar este flag y reactivar el gate de login cuando conectemos un
-// proyecto de Supabase real. Con credenciales de prueba nadie puede
-// autenticarse, así que de momento dejamos pasar a todas las rutas.
-const AUTH_GATE_ENABLED = false;
+const AUTH_GATE_ENABLED = true;
 
 export async function updateSession(request: NextRequest) {
   // Con el gate desactivado no hace falta tocar Supabase en cada navegación
