@@ -59,3 +59,44 @@ body {
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
 }
+
+@keyframes splash-bar-grow {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes splash-text-in {
+  from {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.splash-bar {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: splash-bar-grow 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.splash-bar-1 {
+  animation-delay: 0s;
+}
+.splash-bar-2 {
+  animation-delay: 0.12s;
+}
+.splash-bar-3 {
+  animation-delay: 0.24s;
+}
+
+.splash-text {
+  animation: splash-text-in 0.5s ease-out 0.45s both;
+}

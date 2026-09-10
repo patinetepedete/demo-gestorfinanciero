@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, Roboto_Mono } from "next/font/google";
+import { SplashScreen } from "@/components/splash/splash-screen";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${spaceGrotesk.variable} ${inter.variable} ${robotoMono.variable} h-full`}
     >
       <body className="min-h-full bg-paper text-ink font-sans antialiased">
+        <SplashScreen />
         <div className="min-h-screen p-2 sm:p-4">
           <div className="mx-auto flex h-[calc(100dvh-1rem)] max-w-[1600px] overflow-hidden rounded-[2rem] border border-line bg-paper/70 shadow-[0_30px_80px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:h-[calc(100dvh-2rem)]">
             {children}
