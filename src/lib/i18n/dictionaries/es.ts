@@ -31,6 +31,7 @@ export const es = {
       missingCredentials: "Introduce tu email y contraseña.",
       invalidCredentials: "Email o contraseña incorrectos.",
       passwordTooShort: "La contraseña debe tener al menos 8 caracteres.",
+      connectionError: "No se pudo conectar. Inténtalo de nuevo en unos segundos.",
     },
   },
 

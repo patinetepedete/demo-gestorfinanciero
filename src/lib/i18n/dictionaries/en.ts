@@ -33,6 +33,7 @@ export const en: Dictionary = {
       missingCredentials: "Enter your email and password.",
       invalidCredentials: "Incorrect email or password.",
       passwordTooShort: "Password must be at least 8 characters long.",
+      connectionError: "Couldn't connect. Please try again in a few seconds.",
     },
   },
 

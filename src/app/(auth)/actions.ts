@@ -28,7 +28,9 @@ export async function login(
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithPassword({ email, password });
 
-  if (error) return { error: t.invalidCredentials };
+  if (error) {
+    return { error: error.name === "AuthRetryableFetchError" ? t.connectionError : t.invalidCredentials };
+  }
 
   redirect(next);
 }
@@ -47,7 +49,9 @@ export async function signup(
   const supabase = await createClient();
   const { error } = await supabase.auth.signUp({ email, password });
 
-  if (error) return { error: error.message };
+  if (error) {
+    return { error: error.name === "AuthRetryableFetchError" ? t.connectionError : error.message };
+  }
 
   redirect("/");
 }
